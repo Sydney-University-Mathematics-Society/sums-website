@@ -1,29 +1,66 @@
 {% load static %}
-<nav class="flex items-center justify-between bg-penn-blue-light p-4">
-    <div class="flex-shrink-0">
-        <a href="{% url 'home' %}">
-          <img src="{% static 'sums_logo_white.png' %}" alt="Logo" class="h-10">
-        </a>
+<nav class="bg-white dark:bg-penn-blue-light">
+  <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4">
+    <!-- Logo -->
+    <a href="{% url 'home' %}" class="flex items-center">
+        <img src="{% static 'sums_logo_white.png' %}" class="h-10" alt="Logo" />
+    </a>
+
+    <!-- Dropdown Toggle Button (visible on small screens) -->
+    <button type="button" class="inline-flex items-center p-2 rounded-lg md:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600" id="menu-toggle">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+
+    <!-- Centered Links (hidden on small screens) -->
+    <div class="hidden md:flex justify-center flex-grow">
+      <a href="#" class="text-white mx-4">About Us</a>
+      <a href="#" class="text-white mx-4">Events</a>
+      <a href="#" class="text-white mx-4">Sponsors</a>
+      <a href="#" class="text-white mx-4">Contact Us</a>
     </div>
 
-    <div class="absolute left-1/2 transform -translate-x-1/2 flex justify-center">
-        {% comment %} <a href="{% url 'link1' %}" class="mx-4 text-white">About Us</a>
-        <a href="{% url 'link2' %}" class="mx-4 text-white">Events</a>
-        <a href="{% url 'link3' %}" class="mx-4 text-white">Sponsors</a>
-        <a href="{% url 'link4' %}" class="mx-4 text-white">Contact Us</a> {% endcomment %}
+    <!-- Button (right) -->
+    <a href="#" class="hidden md:block bg-citrine text-black py-2 px-4 rounded-xl">
+      Join SUMS
+    </a>
+  </div>
 
-        <text class="mx-4 text-white">About Us</text>
-        <text class="mx-4 text-white">Events</text>
-        <text class="mx-4 text-white">Sponsors</text>
-        <text class="mx-4 text-white">Contact Us</text>
-    </div>
+  <!-- Dropdown Menu (hidden, visible on small screens) -->
+  <div class="hidden w-full md:hidden" id="dropdown">
+    <a href="#" class="block py-2 px-4 text-white dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">About Us</a>
+    <a href="#" class="block py-2 px-4 text-white dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Events</a>
+    <a href="#" class="block py-2 px-4 text-white dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Sponsors</a>
+    <a href="#" class="block py-2 px-4 text-white dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Contact Us</a>
 
-    <div class="flex-shrink-0">
-        {% comment %} <a href="{% url 'button_link' %}" class="bg-citrine text-black py-2 px-4 rounded">
-          Join SUMS
-        </a> {% endcomment %}
+    <!-- Button (right) -->
+    <a href="#" class="block py-2 px-4 bg-citrine text-black py-2 px-4">Join SUMS</a>
+  </div>
 
-        <text class="bg-citrine text-black py-2 px-4 rounded-xl">Join SUMS</text>
-    </div> 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const dropdownMenu = document.getElementById('dropdown');
+  
+      menuToggle.addEventListener('click', function() {
+          dropdownMenu.classList.toggle('hidden');
+      });
+  
+      const mediaQuery = window.matchMedia('(min-width: 768px)');
+  
+      function handleTabletChange(e) {
+          if (e.matches) {
+              dropdownMenu.classList.add('hidden');
+          }
+      }
+  
+      mediaQuery.addListener(handleTabletChange);
+      handleTabletChange(mediaQuery);
+    });
+  
+  </script>
+
     
+  </div>
 </nav>
