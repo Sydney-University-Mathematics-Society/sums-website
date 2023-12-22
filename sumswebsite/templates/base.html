@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sydney University Mathematics Society{% endblock %}</title>
+    {% load static %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+    <header>
+        {% include 'navbar.html' %}
+    </header>
+
+    {% block content %}
+    <!-- Content overridden by child templates -->
+    {% endblock %}
+
+    <footer>
+        <!-- Site-wide footer content -->
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% load static %}
+<nav class="flex items-center justify-between bg-penn-blue-light p-4">
+    <div class="flex-shrink-0">
+        <a href="{% url 'home' %}">
+          <img src="{% static 'sums_logo_white.png' %}" alt="Logo" class="h-10">
+        </a>
+    </div>
+
+    <div class="absolute left-1/2 transform -translate-x-1/2 flex justify-center">
+        {% comment %} <a href="{% url 'link1' %}" class="mx-4 text-white">About Us</a>
+        <a href="{% url 'link2' %}" class="mx-4 text-white">Events</a>
+        <a href="{% url 'link3' %}" class="mx-4 text-white">Sponsors</a>
+        <a href="{% url 'link4' %}" class="mx-4 text-white">Contact Us</a> {% endcomment %}
+
+        <text class="mx-4 text-white">About Us</text>
+        <text class="mx-4 text-white">Events</text>
+        <text class="mx-4 text-white">Sponsors</text>
+        <text class="mx-4 text-white">Contact Us</text>
+    </div>
+
+    <div class="flex-shrink-0">
+        {% comment %} <a href="{% url 'button_link' %}" class="bg-citrine text-black py-2 px-4 rounded">
+          Join SUMS
+        </a> {% endcomment %}
+
+        <text class="bg-citrine text-black py-2 px-4 rounded-xl">Join SUMS</text>
+    </div> 
+    
+</nav>
