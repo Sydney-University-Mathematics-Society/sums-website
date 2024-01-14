@@ -7,12 +7,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'penn-blue-light':'#0B2558',
-        'citrine':'#F2DB00',
-        'penn-blue-dark':'#000034',
-        'azul':'#006FBA',
-        'carolina-blue' : '#85BADE',
-        'ghost-white' : '#F8FAFF',
+        'sums-navy':'#0B2558',
+        'sums-yellow':'#F2DB00',
+        'sums-dark-navy':'#000034',
+        'sums-blue':'#006FBA',
+        'sums-light-blue' : '#85BADE',
+        'sums-white' : '#F8FAFF',
       },
     },
   },

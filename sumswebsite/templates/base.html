@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title>{% block title %}Sydney University Mathematics Society{% endblock %}</title>
     {% load static %}
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 </head>
-<body>
+<body class="bg-sums-navy flex flex-col h-screen justify-between">
     <header>
         {% include 'navbar.html' %}
     </header>
@@ -17,9 +17,8 @@
     <!-- Content overridden by child templates -->
     {% endblock %}
 
-    <footer>
-        <!-- Site-wide footer content -->
-    </footer>
+    <!-- Footer -->
+    {% include 'bottom_navbar.html' %}
 
 </body>
 </html>
