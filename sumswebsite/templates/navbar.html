@@ -1,66 +1,53 @@
 {% load static %}
-<nav class="bg-white dark:bg-penn-blue-light">
-  <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4">
-    <!-- Logo -->
-    <a href="{% url 'home' %}" class="flex items-center">
-        <img src="{% static 'sums_logo_white.png' %}" class="h-10" alt="Logo" />
-    </a>
+<nav class="bg-penn-blue-light">
+    <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4">
+        <!-- Logo -->
+        <a href="{% url 'home' %}" class="flex items-center flex-shrink-0">
+            <img src="{% static 'sums_logo_white.png' %}" class="h-10" alt="Logo" />
+        </a>
 
-    <!-- Dropdown Toggle Button (visible on small screens) -->
-    <button type="button" class="inline-flex items-center p-2 rounded-lg md:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600" id="menu-toggle">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-      </svg>
-    </button>
+        <!-- Dropdown Toggle Button (visible on small screens) -->
+        <button type="button" class="inline-flex items-center p-2 rounded-lg md:hidden focus:outline-none focus:ring-2 hover:bg-gray-700 focus:ring-gray-600" id="menu-toggle">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      
 
-    <!-- Centered Links (hidden on small screens) -->
-    <div class="hidden md:flex justify-center flex-grow">
-      <a href="#" class="text-white mx-4">About Us</a>
-      <a href="#" class="text-white mx-4">Events</a>
-      <a href="#" class="text-white mx-4">Sponsors</a>
-      <a href="#" class="text-white mx-4">Contact Us</a>
+        <!-- Centered Links (hidden on small screens) -->
+        <div class="hidden md:flex justify-center items-center flex-grow">
+            <a href="#" class="text-white mx-4">About Us</a>
+            <a href="#" class="text-white mx-4">Events</a>
+            <a href="#" class="text-white mx-4">Sponsors</a>
+            <a href="#" class="text-white mx-4">Contact Us</a>
+        </div>
+
+        <!-- Button (right) -->
+        <a href="#" class="hidden md:block bg-citrine text-black py-2 px-4 rounded-xl">
+            Join SUMS
+        </a>
     </div>
 
-    <!-- Button (right) -->
-    <a href="#" class="hidden md:block bg-citrine text-black py-2 px-4 rounded-xl">
-      Join SUMS
-    </a>
-  </div>
-
-  <!-- Dropdown Menu (hidden, visible on small screens) -->
-  <div class="hidden w-full md:hidden" id="dropdown">
-    <a href="#" class="block py-2 px-4 text-white dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">About Us</a>
-    <a href="#" class="block py-2 px-4 text-white dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Events</a>
-    <a href="#" class="block py-2 px-4 text-white dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Sponsors</a>
-    <a href="#" class="block py-2 px-4 text-white dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">Contact Us</a>
-
-    <!-- Button (right) -->
-    <a href="#" class="block py-2 px-4 bg-citrine text-black py-2 px-4">Join SUMS</a>
-  </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuToggle = document.getElementById('menu-toggle');
-      const dropdownMenu = document.getElementById('dropdown');
-  
-      menuToggle.addEventListener('click', function() {
-          dropdownMenu.classList.toggle('hidden');
-      });
-  
-      const mediaQuery = window.matchMedia('(min-width: 768px)');
-  
-      function handleTabletChange(e) {
-          if (e.matches) {
-              dropdownMenu.classList.add('hidden');
-          }
-      }
-  
-      mediaQuery.addListener(handleTabletChange);
-      handleTabletChange(mediaQuery);
-    });
-  
-  </script>
-
-    
-  </div>
+    <!-- Dropdown Menu (hidden, visible on small screens) -->
+    <div class="hidden w-full md:hidden" id="dropdown">
+        <a href="#" class="block py-2 px-4 text-white hover:bg-gray-700">About Us</a>
+        <a href="#" class="block py-2 px-4 text-white hover:bg-gray-700">Events</a>
+        <a href="#" class="block py-2 px-4 text-white hover:bg-gray-700">Sponsors</a>
+        <a href="#" class="block py-2 px-4 text-white hover:bg-gray-700">Contact Us</a>
+        <!-- Duplicate Button for Mobile View -->
+        <div class="py-2 px-4">
+          <a href="#" class="block bg-citrine text-center text-black py-2 px-4 rounded-xl">Join SUMS</a>
+        </div>
+    </div>
 </nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const dropdownMenu = document.getElementById('dropdown');
+
+        menuToggle.addEventListener('click', function() {
+            dropdownMenu.classList.toggle('hidden');
+        });
+    });
+</script>
